@@ -8,8 +8,7 @@ SYSTEM_MESSAGE=config.SYSTEM_MESSAGE
 llm = model.get_llm()
 
 def ask_llm(query):
-    print(SYSTEM_MESSAGE)
-    print(query)
+    
     completion = llm.chat.completions.create(
         model="gpt-4",
         messages=[
