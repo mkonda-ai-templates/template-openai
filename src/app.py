@@ -12,5 +12,4 @@ res = llm.chat.completions.create(
               {"role":"user", "content":"What is the meaning life?"}]
 )
 
-print(res)
-
+print(res.choices[0].message.content)
