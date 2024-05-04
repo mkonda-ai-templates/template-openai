@@ -14,8 +14,8 @@ def get_llm():
     return llm
 
 def get_embeddings(text):
-   text = text.replace("\n", " ")
-
-   llm = get_llm()
-   
-   return llm.embeddings.create(input = [text], model=EMBEDDING_MODEL).data[0].embedding
+    if not text:
+        raise ValueError("Text cannot be empty")
+    text = text.replace("\n", " ")
+    llm = get_llm()
+    return llm.embeddings.create(input = [text], model=EMBEDDING_MODEL).data[0].embedding
